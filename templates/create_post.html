@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title> post </title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-8 offset-2">
+                {{ form.media }}
+               <form method="post" action="." enctype="multipart/form-data">
+                   {% csrf_token %}
+                   {{ form }}
+                   <br/>
+                   <button type="submit">submit</button>
+               </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
